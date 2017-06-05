@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+  	<meta>
+  	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://static.clewm.net/cli/flatkit/assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://static.clewm.net/cli/flatkit/assets/styles/app.min.css">
+    <link rel="stylesheet" href="http://static.clewm.net/cli/flatkit/assets/styles/cli_global.css"> 
+    <link rel="stylesheet" href="http://static.clewm.net/cli/flatkit/assets/font-awesome/css/font-awesome.min.css">
+  </head>
+  <body>
+  	<div class="text-center p-t-lg">
+  		<button class="btn" id="title-alert">带标题的提示框</button>
+	  	<button class="btn" id="title-alert-large">带标题的提示框（大）</button>
+	  	<button class="btn" id="title-alert-400">带标题的提示框（400px）</button>
+  	</div>
+  	<div class="text-center m-t-md">
+  		<button class="btn" id="title-cancel-alert">带标题和取消的提示框</button>
+  		<button class="btn" id="title-cancel-alert-large">带标题和取消的提示框（大）</button>
+		<button class="btn" id="title-cancel-alert-400">带标题和取消的提示框（400px）</button>
+  	</div>
+  	<div class="text-center m-t-md">
+  		<button class="btn" id="alert">带叉叉的提示框</button>
+  		<button class="btn" id="alert-backdrop">点击空白处不消失提示框</button>
+  	</div>
+  </body>
+<script src="http://static.clewm.net/cli/js/lib/jquery.1.9.1.min.js"></script>
+<script src="http://static.clewm.net/cli/flatkit/libs/jquery/bootstrap/dist/js/bootstrap_V3.js"></script>
+<script src="modalTips.js"></script>
+<script>
+document.getElementById("alert").onclick = function(){
+	new TitleAlert({
+		title : "提示标题",
+	    content : "基础提示框",
+	    confirm : "确定键",
+	    size: "simple",
+	    close: true,
+	    success : function(){
+	        console.log("ok");
+	    }
+	}).init();
+}
+document.getElementById("alert-backdrop").onclick = function(){
+	new TitleAlert({
+		title : "提示标题",
+	    content : "基础提示框",
+	    confirm : "确定键",
+	    size: "simple",
+	    close: true,
+	    backdrop : true,
+	    success : function(){
+	        console.log("ok");
+	    }
+	}).init();
+}
+document.getElementById("title-alert").onclick = function(){
+	new TitleAlert({
+	    title : "提示标题",
+	    content : "<div class='text-danger'>带标题的提示框</div>",
+	    confirm : "确定键",
+	    cancel : "取消键",
+	    size: "simple",
+	    success : function(){
+	        console.log("ok");
+	    },
+	    fail : function(){
+	        console.log("cancel");
+	    }
+	}).init();
+}
+document.getElementById("title-alert-large").onclick = function(){
+	new TitleAlert({
+	    title : "提示标题",
+	    content : "带标题的提示框（大）",
+	    confirm : "确定键",
+	    cancel : "取消键",
+	    size: "large",
+	    success : function(){
+	        console.log("ok");
+	    },
+	    fail : function(){
+	        console.log("cancel");
+	    }
+	}).init();
+}
+document.getElementById("title-alert-400").onclick = function(){
+	new TitleAlert({
+	    title : "提示标题",
+	    content : "带标题的提示框（400px）",
+	    confirm : "确定键",
+	    cancel : "取消键",
+	    success : function(){
+	        console.log("ok");
+	    },
+	    fail : function(){
+	        console.log("cancel");
+	    }
+	}).init();
+}
+document.getElementById("title-cancel-alert").onclick = function(){
+	new CancelAlert({
+	    title : "提示标题",
+	    content : "带标题和取消的提示框",
+	    confirm : "确定键",
+	    cancel : "取消键",
+	    size: "simple",
+	    success : function(){
+	        console.log("ok");
+	    },
+	    fail : function(){
+	        console.log("cancel");
+	    }
+	}).init();
+}
+document.getElementById("title-cancel-alert-large").onclick = function(){
+	new CancelAlert({
+	    title : "提示标题",
+	    content : "带标题和取消的提示框（大）",
+	    confirm : "确定键",
+	    cancel : "取消键",
+	    size: "large",
+	    success : function(){
+	        console.log("ok");
+	    },
+	    fail : function(){
+	        console.log("cancel");
+	    }
+	}).init();
+}
+document.getElementById("title-cancel-alert-400").onclick = function(){
+	new CancelAlert({
+	    title : "提示标题",
+	    content : "带标题和取消的提示框（400px）",
+	    confirm : "确定键",
+	    cancel : "取消键",
+	    success : function(){
+	        console.log("ok");
+	    },
+	    fail : function(){
+	        console.log("cancel");
+	    }
+	}).init();
+}
+</script>
+</html>
